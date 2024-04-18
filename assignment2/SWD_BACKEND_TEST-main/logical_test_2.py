@@ -11,6 +11,11 @@ Convert Arabic Number to Roman Number.
 
 
 class NumberToRoman:
+    """
+    This class will convert number to roman numeral
+    :argument:
+        number : Number is want to convert
+    """
     def __init__(self, number):
         self._number = int(number.replace(',', ''))
         if not 0 < self.number <= 1000:
@@ -24,13 +29,24 @@ class NumberToRoman:
 
     @property
     def number(self):
+        """
+        Getter method
+        """
         return self._number
 
     @number.setter
     def number(self, number):
+        """
+        Setter method
+        """
         self._number = number
 
     def number_to_roman(self):
+        """
+        This method will  convert number to roman numeral
+            :return:
+                result : roman numeral convert from number
+        """
         thousands = self.roman['m'][self.number // 1000]
         hundreds = self.roman['c'][(self.number % 1000) // 100]
         tens = self.roman['x'][(self.number % 100) // 10]
